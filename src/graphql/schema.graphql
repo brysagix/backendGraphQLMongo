@@ -1,0 +1,23 @@
+type Query {
+  saludame: String!
+  despedite: String!
+  usuarios: [Usuario!]
+}
+
+#recordar que mongo crea el ID
+type Mutation {
+  createUser(nombre: String!, apellido: String!, personalID: Int!, correo: String!, rol: String!, estado: String!):Usuario
+  deleteUser(personalID: Int!):Usuario
+  actualizarUser(nombre: String!, apellido: String!,personalID: Int!, correo: String!, rol: String!, estado: String!):Usuario
+}
+
+
+type Usuario {
+  _id: ID!
+  nombre: String!
+  apellido: String!
+  personalID: Int!
+  correo:String!
+  rol:String!
+  estado:String!
+}
